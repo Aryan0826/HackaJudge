@@ -16,9 +16,9 @@ def index():
 
 @app.route('/results')
 def results():
-    # Sort projects by score (highest first)
-    sorted_projects = sorted(projects, key=lambda x: x["score"], reverse=True)
-    return render_template('results.html', projects=sorted_projects)
+   
+    
+    return render_template('results.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
