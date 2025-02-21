@@ -6,14 +6,7 @@
   </head>
   <body>
     <h1>Judging Results</h1>
-    <ul>
-      {% for project in projects %}
-      <li>
-        <strong>{{ project.name }}</strong>: {{ project.score }} {% if
-        project.comment %} <br />Comment: {{ project.comment }} {% endif %}
-      </li>
-      {% endfor %}
-    </ul>
-    <a href="{{ url_for('index') }}">Back to Judging</a>
+
+    <!-- <a href="{{ url_for('index') }}">Back to Judging</a> -->
   </body>
 </html>
