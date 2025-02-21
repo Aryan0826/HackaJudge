@@ -7,23 +7,108 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='styles.css') }}"
     />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 2rem;
+      }
+      .slider-container {
+        margin-bottom: 1.5rem;
+      }
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+      input[type="range"] {
+        width: 100%;
+      }
+      .value-display {
+        font-weight: bold;
+        margin-left: 0.5rem;
+      }
+    </style>
   </head>
   <body>
     <h1>Hackathon Judging Tool</h1>
-    <form method="POST">
-      {% for project in projects %}
-      <div>
-        <h3>{{ project.name }}</h3>
-        <label for="score_{{ project.name }}">Score:</label>
+    <form method="POST" action="/">
+      <h2>Rate the Parameters</h2>
+      <div class="slider-container">
+        <label for="rating1"
+          >Innovation and Creativity:
+          <span id="value1" class="value-display">5</span></label
+        >
         <input
-          type="text"
-          name="score_{{ project.name }}"
-          id="score_{{ project.name }}"
+          type="range"
+          id="rating1"
+          name="rating1"
+          min="1"
+          max="10"
+          value="5"
+          oninput="value1.textContent = this.value"
         />
       </div>
-      <hr />
-      {% endfor %}
-      <button type="submit">Submit Scores</button>
+      <div class="slider-container">
+        <label for="rating2"
+          >Technical Execution:
+          <span id="value2" class="value-display">5</span></label
+        >
+        <input
+          type="range"
+          id="rating2"
+          name="rating2"
+          min="1"
+          max="10"
+          value="5"
+          oninput="value2.textContent = this.value"
+        />
+      </div>
+      <div class="slider-container">
+        <label for="rating3"
+          >Impact and Usefulness:
+          <span id="value3" class="value-display">5</span></label
+        >
+        <input
+          type="range"
+          id="rating3"
+          name="rating3"
+          min="1"
+          max="10"
+          value="5"
+          oninput="value3.textContent = this.value"
+        />
+      </div>
+      <div class="slider-container">
+        <label for="rating4"
+          >User Experience and Design:
+          <span id="value4" class="value-display">5</span></label
+        >
+        <input
+          type="range"
+          id="rating4"
+          name="rating4"
+          min="1"
+          max="10"
+          value="5"
+          oninput="value4.textContent = this.value"
+        />
+      </div>
+      <div class="slider-container">
+        <label for="rating5"
+          >Presentation and Pitch:
+          <span id="value5" class="value-display">5</span></label
+        >
+        <input
+          type="range"
+          id="rating5"
+          name="rating5"
+          min="1"
+          max="10"
+          value="5"
+          oninput="value5.textContent = this.value"
+        />
+      </div>
+
+      <button type="submit">Submit Scores & Ratings</button>
     </form>
   </body>
 </html>

@@ -2,25 +2,17 @@ from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
-# Example list of hackathon projects
-projects = [
-    {"name": "Project Alpha", "score": None,},
-    # {"name": "Project Beta", "score": None, "comment": ""},
-    # {"name": "Project Gamma", "score": None, "comment": ""}
-]
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
-        for project in projects:
-            # Retrieve score and comment for each project
-            score_value = request.form.get(f'score_{project["name"]}')
-            try:
-                project["score"] = float(score_value) if score_value else 0
-            except ValueError:
-                project["score"] = 0  # Default to 0 on invalid input
+        rating1 = request.form.get('rating1', 5)  # default to 5
+        rating2 = request.form.get('rating2', 5)
+        rating3 = request.form.get('rating3', 5)
+        rating4 = request.form.get('rating4', 5)
+        rating5 = request.form.get('rating5', 5)        
         return redirect(url_for('results'))
-    return render_template('index.html', projects=projects)
+    return render_template('index.html')
 
 @app.route('/results')
 def results():
