@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Results</title>
+  </head>
+  <body>
+    <h1>Judging Results</h1>
+    <ul>
+      {% for project in projects %}
+      <li>
+        <strong>{{ project.name }}</strong>: {{ project.score }} {% if
+        project.comment %} <br />Comment: {{ project.comment }} {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+    <a href="{{ url_for('index') }}">Back to Judging</a>
+  </body>
+</html>
