@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <title>Hackathon Admin Panel</title>
-    <link rel="stylesheet" href="./static/styles.css" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='admin_styles.css') }}" />
+    <link rel="stylesheet" href="../static/admin_styles.css" />
+    <link rel="stylesheet" href="{{ url_for(filename='admin_styles.css') }}" />
   </head>
   <body class="admin">
     <h1 class="h1" >Hack'a'Judge Admin Panel</h1>
@@ -74,7 +74,7 @@
             <span id="add-criteria">+</span>
           </div>
 
-          <div class="form-group">
+          <!-- <div class="form-group">
             <label>Grading Scale:</label>
             <div class="grading-options">
               <input 
@@ -94,7 +94,7 @@
               />
               <label for="scale10" class="scale-box">1-10 Scale</label>
             </div>
-          </div>
+          </div> -->
           
           <button type="submit">Save Event Details</button>
       </form>
