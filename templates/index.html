@@ -7,6 +7,12 @@
       href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@500..800&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nova+Square&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="{{ url_for('static', filename='styles.css') }}"
@@ -19,12 +25,12 @@
     {% endif %}
     <form method="POST">
       {% if team_name %}
-      <div class="teamNameTop">
+      <div class="teamNameTop nova-square-regular">
         <p><strong>Team:</strong> {{ team_name }}</p>
       </div>
       <input type="hidden" name="teamName" value="{{ team_name }}" />
       {% else %}
-      <div class="team-name-container">
+      <div class="team-name-container nova-square-regular">
         <label for="teamName">Team Name :</label>
         <input
           type="text"
@@ -38,9 +44,9 @@
       <!-- Hidden field to track the current judge number -->
       <input type="hidden" name="judge" value="{{ judge }}" />
 
-      <h2>Criteria Scores</h2>
+      <h2 class="nova-square-regular">Criteria Scores</h2>
       {% for criterion in event.criteria %}
-      <div class="slider-container">
+      <div class="slider-container nova-square-regular">
         <label for="rating{{ loop.index }}">
           {{ criterion }}:
           <span id="value{{ loop.index }}" class="value-display">1</span>
@@ -57,7 +63,7 @@
         />
       </div>
       {% endfor %}
-      <div class="remarks-container">
+      <div class="remarks-container nova-square-regular">
         <label for="remarks">Remarks</label>
         <input
           type="text"
