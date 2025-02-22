@@ -5,12 +5,23 @@
   color: rgb(10, 3, 3);
   text-align: center;
 }
+/* fonts */
 .funnel-display {
   font-family: "Funnel Display", serif;
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: "medium";
   font-size: 50px;
+}
+
+.nova-square-regular {
+  font-family: "Nova Square", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.title {
+  padding-bottom: 40px;
 }
 
 .h1 {
@@ -33,6 +44,10 @@ h2 {
 
 .form-group {
   margin: 15px 0;
+  padding: 10px 10px 10px 10px;
+
+  /* padding-top: 10px;
+  padding-bottom: 10px; */
   text-align: left;
 }
 

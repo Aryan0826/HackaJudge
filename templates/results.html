@@ -10,6 +10,10 @@
       rel="stylesheet"
     />
     <link
+      href="https://fonts.googleapis.com/css2?family=Nabla&display=swap"
+      rel="stylesheet"
+    />
+    <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
@@ -17,12 +21,12 @@
     <style></style>
   </head>
   <body>
-    <div class="card-body text-center">
+    <div class="card-body text-center funnel-display">
       <p class="lead">Your Team has Scored</p>
       <p class="score">{{ score | round(2) }}</p>
     </div>
-    <div class="card-body text-center leaderboard funnel-display">
-      <h2>Leaderboard</h2>
+    <div class="card-body text-center">
+      <h2 class="leaderboard nabla">Leaderboard</h2>
 
       <!-- Bar Graph Container -->
       <div id="chart-container">

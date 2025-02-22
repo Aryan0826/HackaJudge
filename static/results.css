@@ -7,7 +7,7 @@
 }
 .lead {
   margin-bottom: 20px;
-  font-size: 22px;
+  font-size: 35px;
 }
 .score {
   margin-bottom: 50px;
@@ -24,6 +24,14 @@
 
 .leaderboard {
   margin-top: 5rem;
+}
+
+.nabla {
+  font-family: "Nabla", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "EDPT" 100, "EHLT" 12;
   font-size: 50px;
 }
 
@@ -32,11 +40,11 @@
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: "medium";
-  font-size: 100px;
+  font-size: 35px;
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   margin: 2rem;
   background-image: url("./images/bg.webp");
   background-size: cover;
