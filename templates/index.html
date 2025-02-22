@@ -16,9 +16,7 @@
     <form method="POST">
       {% if team_name %}
       <div class="teamNameTop">
-        <p>
-          <strong>Team:</strong> {{ team_name }}
-        </p>
+        <p><strong>Team:</strong> {{ team_name }}</p>
       </div>
       <input type="hidden" name="teamName" value="{{ team_name }}" />
       {% else %}
@@ -66,10 +64,16 @@
       </div>
       <button type="submit">Submit Scores</button>
     </form>
-    <img class="art" src="../static/images/illustration1.png" alt="Art" />
     <img
+      loading="lazy"
+      class="art"
+      src="../static/images/illustration1.png"
+      alt="Art"
+    />
+    <img
+      loading="lazy"
       class="aum"
-      src="../static/images/illustration4.png"
+      src="../static/images/illustration4.webp"
       alt="Illustration"
     />
     <script>

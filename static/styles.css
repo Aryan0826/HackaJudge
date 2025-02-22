@@ -1,12 +1,12 @@
-•⁠  ⁠{
+•⁠ ⁠ {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 body {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  background-image: url("./images/bg.png");
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-image: url("./images/bg.webp");
   background-size: cover;
   color: rgb(255, 255, 255);
   line-height: 1.6;
@@ -26,7 +26,8 @@ h1 {
   margin-bottom: 1.5rem;
 }
 
-h2, h3 {
+h2,
+h3 {
   font-size: 1.75rem;
   color: #34495e;
   margin-bottom: 1rem;
@@ -85,9 +86,9 @@ form {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: #15B392 !important;
+  background: #15b392 !important;
   cursor: pointer;
-  border: 2px solid #15B392;
+  border: 2px solid #15b392;
   margin-top: 0px;
   transition: all 0.2s ease;
 }
@@ -118,7 +119,7 @@ form {
 }
 
 button {
-  background: #15B392;
+  background: #15b392;
   color: #ffffff;
   padding: 10px 20px;
   border: none;
@@ -129,7 +130,7 @@ button {
 }
 
 button:hover {
-  background: #15B392;
+  background: #15b392;
 }
 
 ul {
@@ -146,7 +147,7 @@ ul li {
 }
 
 a {
-  color: #15B392;
+  color: #15b392;
   text-decoration: none;
   font-size: 1.1rem;
 }
@@ -163,7 +164,7 @@ a:hover {
 }
 
 .illustration {
-  width: 150px; 
+  width: 150px;
   height: auto;
 }
 
@@ -183,13 +184,13 @@ form {
   position: absolute;
   top: 70px;
   left: 70px;
-  width: 300px; 
-  height: auto; 
+  width: 300px;
+  height: auto;
 }
 
-@media (max-width: 1600px) { 
+@media (max-width: 1600px) {
   .art {
-    position: relative; 
+    position: relative;
     display: block;
     margin: 20px auto;
     width: 250px;
@@ -198,9 +199,9 @@ form {
   }
 }
 
-@media (max-width: 1024px) { 
+@media (max-width: 1024px) {
   .art {
-    position: relative; 
+    position: relative;
     display: block;
     margin: 20px auto;
     width: 250px;
@@ -209,9 +210,9 @@ form {
   }
 }
 
-@media (max-width: 768px) { 
+@media (max-width: 768px) {
   .art {
-    position: relative; 
+    position: relative;
     display: block;
     margin: 20px auto;
     width: 200px;
@@ -220,11 +221,11 @@ form {
   }
 }
 
-@media (max-width: 480px) { 
+@media (max-width: 480px) {
   .art {
-    position: relative; 
+    position: relative;
     display: block;
-    margin: 20px auto; 
+    margin: 20px auto;
     width: 120px;
     top: 0;
     left: 0;
@@ -235,11 +236,11 @@ form {
   position: absolute;
   bottom: 70px;
   right: 70px;
-  width: 200px; 
-  height: auto;  
+  width: 200px;
+  height: auto;
 }
 
-@media (max-width: 768px) { 
+@media (max-width: 768px) {
   .aum {
     display: none;
   }
