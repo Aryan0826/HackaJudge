@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <title>Hackathon Admin Panel</title>
-    
     <link
       rel="stylesheet"
       href="{{ url_for('static', filename='admin_styles.css') }}"
@@ -40,7 +39,7 @@
           />
         </div>
         <div class="form-group">
-          <label for="numJudges">Number of Judges:</label>
+          <label for="numJudges">Number of Judges (max 4):</label>
           <input
             type="number"
             id="numJudges"
@@ -65,21 +64,6 @@
           </div>
           <span id="add-criteria">+</span>
         </div>
-        <!-- <div class="form-group">
-          <label>Grading Scale:</label>
-          <div class="grading-options">
-            <input
-              type="radio"
-              id="scale5"
-              name="gradingScale"
-              value="1-5"
-              required
-            />
-            <label for="scale5" class="scale-box">1-5 Scale</label>
-            <input type="radio" id="scale10" name="gradingScale" value="1-10" />
-            <label for="scale10" class="scale-box">1-10 Scale</label>
-          </div>
-        </div> -->
         <button type="submit">Save Event Details</button>
       </form>
     </div>
@@ -91,9 +75,9 @@
           const newCriteria = document.createElement("div");
           newCriteria.className = "criteria-item";
           newCriteria.innerHTML = `
-          <input type="text" name="criteria[]" placeholder="Enter criterion" required />
-          <span class="remove-criteria">-</span>
-        `;
+            <input type="text" name="criteria[]" placeholder="Enter criterion" required />
+            <span class="remove-criteria">-</span>
+          `;
           criteriaList.appendChild(newCriteria);
         });
       document.addEventListener("click", function (e) {
