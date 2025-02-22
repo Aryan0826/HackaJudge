@@ -8,16 +8,21 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='styles.css') }}"
     />
-    
   </head>
   <body>
     <h1>Hackathon Judging Tool</h1>
-    <div class="team-name-container">
-      <label for="teamName">Team Name :</label>
-      <input type="text" id="teamName" name="teamName" placeholder="Enter team name" required />
-    </div>
 
     <form method="POST" action="/">
+      <div class="team-name-container">
+        <label for="teamName">Team Name :</label>
+        <input
+          type="text"
+          id="teamName"
+          name="teamName"
+          placeholder="Enter team name"
+          required
+        />
+      </div>
       <h2>Rate the Parameters</h2>
       <div class="slider-container">
         <label for="rating1"
@@ -97,7 +102,13 @@
 
       <div class="remarks-container">
         <label for="remarks">Remarks</label>
-        <input type="text" id="remarks" name="remarks" placeholder="Write your feedback." required />
+        <input
+          type="text"
+          id="remarks"
+          name="remarks"
+          placeholder="Write your feedback."
+          required
+        />
       </div>
 
       <button type="submit">Submit Scores & Ratings</button>

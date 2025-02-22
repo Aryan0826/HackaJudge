@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
+from urllib.parse import quote
 
 app = Flask(__name__)
 
@@ -19,6 +20,7 @@ def index():
         rating3 = float(request.form.get('rating3', 5))
         rating4 = float(request.form.get('rating4', 5))
         rating5 = float(request.form.get('rating5', 5))
+        name = request.form.get('teamName')
 
         weighted_average = (
             rating1 * WEIGHTS['rating1'] +
@@ -27,17 +29,26 @@ def index():
             rating4 * WEIGHTS['rating4'] +
             rating5 * WEIGHTS['rating5']
         )       
-        return redirect(url_for('results', score = weighted_average))
+        return redirect(url_for('results', score = weighted_average, teamName = name))
     return render_template('index.html')
 
 @app.route('/results')
 def results():
+    from urllib.parse import unquote
+
     score = request.args.get('score', None)
+    teamName = request.args.get('teamName', None)
+    
     try:
         score = float(score)
     except (ValueError, TypeError):
         score = 0
-    return render_template('results.html', score = score)
+
+    if teamName:
+        teamName = unquote(teamName)
+
+        
+    return render_template('results.html', score = score, teamName = teamName)
 
 if __name__ == '__main__':
     app.run(debug=True)
