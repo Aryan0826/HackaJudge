@@ -20,3 +20,24 @@
         font-weight: bold;
         margin-left: 0.5rem;
       }
+      .team-name-container {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .team-name-container input {
+        padding: 0rem;
+        font-size: 1rem;
+        width: 250px;
+      }
+      .remarks-container {
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .remarks-container input {
+        padding: 3rem;
+        font-size: 1rem;
+        text-align: center;
+        width: 250px;
+      }
+      
