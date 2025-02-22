@@ -9,7 +9,6 @@
     />
     <link rel="stylesheet" href="../static/results.css" />
     <style>
-      /* Additional styling to match your theme */
       #chart-container {
         margin: 20px auto;
         max-width: 600px;
@@ -17,12 +16,8 @@
     </style>
   </head>
   <body>
-    <div class="card-header text-center">
-      <h2>Project Performance</h2>
-    </div>
     <div class="card-body text-center">
-      <p>{{ teamName }}</p>
-      <p class="lead">Your weighted average score is:</p>
+      <p class="lead">Your score is:</p>
       <p class="score">{{ score | round(2) }}</p>
       <h3>Leaderboard</h3>
 
@@ -40,17 +35,14 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
       (function () {
-        // Using JSON.parse so that your IDE sees valid JSON (and the safe filter ensures proper rendering)
         const teamNames = JSON.parse(
           '{{ leaderboard | map(attribute="team") | list | tojson | safe }}'
         );
         const teamScores = JSON.parse(
           '{{ leaderboard | map(attribute="score") | list | tojson | safe }}'
         );
-
-        const ctx = document
-          .getElementById("leaderboardChart")
-          .getContext("2d");
+    
+        const ctx = document.getElementById("leaderboardChart").getContext("2d");
         const leaderboardChart = new Chart(ctx, {
           type: "bar",
           data: {
@@ -59,9 +51,12 @@
               {
                 label: "Team Scores",
                 data: teamScores,
-                backgroundColor: "rgba(54, 162, 235, 0.5)",
-                borderColor: "rgba(54, 162, 235, 1)",
-                borderWidth: 1,
+                backgroundColor: "rgba(255, 255, 255, 0)", //transparent
+                borderColor: "rgba(255, 255, 255, 1)",
+                borderWidth: 6,
+                barThickness: 65,
+                barPercentage: 50,
+                categoryPercentage: 50,
               },
             ],
           },
@@ -69,8 +64,18 @@
             scales: {
               y: {
                 beginAtZero: true,
-                ticks: { precision: 0 },
+                ticks: { display: false },
               },
+              x: {
+                ticks: {
+                  color: "rgba(255, 255, 255, 1)" // Opaque white team name labels
+                },
+                border: {
+                  display: true,                    // Show X-axis baseline
+                  color: "rgba(255, 255, 255, 1)", // White, opaque line
+                  width: 2                          // Line thickness in pixels
+                },
+              }
             },
             plugins: {
               legend: { display: false },
