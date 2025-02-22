@@ -2,7 +2,7 @@
   font-family: Arial, sans-serif;
   margin: 2rem;
   background-color: rgb(6, 24, 31);
-  color: white;
+  color: rgb(10, 3, 3);
   text-align: center;
 }
 
@@ -63,7 +63,7 @@ input[type="number"] {
   line-height: 20px;
   text-align: center;
   font-size: 18px;
-  color: #4CAF50;
+  color: #4caf50;
   cursor: pointer;
   margin-top: 10px;
 }
@@ -120,9 +120,9 @@ input[type="radio"] {
 
 /* Selected state */
 input[type="radio"]:checked + .scale-box {
-  background: #4CAF50;
+  background: #4caf50;
   color: white;
-  border-color: #4CAF50;
+  border-color: #4caf50;
 }
 
 /* Hover effect for unselected boxes */
@@ -136,7 +136,7 @@ input[type="radio"]:checked + .scale-box:hover {
 }
 
 button[type="submit"] {
-  background: #4CAF50;
+  background: #4caf50;
   color: white;
   padding: 10px 20px;
   border: none;
