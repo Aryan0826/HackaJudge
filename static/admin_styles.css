@@ -2,7 +2,7 @@
   font-family: Arial, sans-serif;
   font-size: 1.1rem;
   margin: 2rem;
-  background-color: rgb(6, 24, 31);
+  background-image: url("./images/bg.png");
   color: rgb(10, 3, 3);
   text-align: center;
 }
@@ -48,7 +48,6 @@ input[type="date"] {
   color: #333;
 }
 
-/* Remove spinner arrows */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -99,12 +98,10 @@ input[type="number"]::-webkit-outer-spin-button {
   margin-top: 5px;
 }
 
-/* Hide the actual radio inputs */
 input[type="radio"] {
   display: none;
 }
 
-/* Style the labels as simple boxes */
 .scale-box {
   display: inline-block;
   padding: 10px 15px;
@@ -117,19 +114,16 @@ input[type="radio"] {
   color: #333;
 }
 
-/* Selected state */
 input[type="radio"]:checked + .scale-box {
   background: #15B392;
   color: white;
   border-color: #15B392;
 }
 
-/* Hover effect for unselected boxes */
 .scale-box:hover {
   background: #e0e0e0;
 }
 
-/* Override hover when checked */
 input[type="radio"]:checked + .scale-box:hover {
   background: #45a049;
 }

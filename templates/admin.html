@@ -54,7 +54,6 @@
           <label>Judging Criteria:</label>
           <div id="criteria-list">
             <div class="criteria-item">
-              <!-- Note the input name "criteria[]" -->
               <input
                 type="text"
                 name="criteria[]"
@@ -85,7 +84,6 @@
       </form>
     </div>
     <script>
-      // Add new criterion dynamically
       document
         .getElementById("add-criteria")
         .addEventListener("click", function () {
@@ -98,7 +96,6 @@
         `;
           criteriaList.appendChild(newCriteria);
         });
-      // Remove a criterion if there is more than one
       document.addEventListener("click", function (e) {
         if (e.target.classList.contains("remove-criteria")) {
           const criteriaItems = document.querySelectorAll(".criteria-item");
