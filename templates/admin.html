@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hackathon Admin Panel</title>
+    <link rel="stylesheet" href="./static/styles.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin_styles.css') }}" />
+  </head>
+  <body class="admin">
+    <h1 class="h1" >Hack'a'Judge Admin Panel</h1>
+    
+    <div class="admin-container">
+      <form method="POST" action="/admin">
+        <h2>Event Setup</h2>
+        
+        <div class="form-group">
+          <label for="eventName">Event Name:</label>
+          <input 
+            type="text" 
+            id="eventName" 
+            name="eventName" 
+            placeholder="Enter event name" 
+            required 
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="eventDate">Event Date:</label>
+          <input 
+            type="date" 
+            id="eventDate" 
+            name="eventDate" 
+            required 
+          />
+        </div>
+
+        <div class="form-group">
+            <label for="numTeams">Number of Teams:</label>
+            <input 
+              type="number" 
+              id="numTeams" 
+              name="numTeams" 
+              min="1" 
+              placeholder="Enter number of teams" 
+              required 
+            />
+          </div>
+
+        <div class="form-group">
+            <label for="numJudges">Number of Judges:</label>
+            <input 
+              type="number" 
+              id="numJudges" 
+              name="numJudges" 
+              min="1" 
+              placeholder="Enter number of judges" 
+              required 
+            />
+          </div>
+
+        <div class="form-group">
+            <label>Judging Criteria:</label>
+            <div id="criteria-list">
+              <div class="criteria-item">
+                <input 
+                  type="text" 
+                  name="criteria[]" 
+                  placeholder="Enter criterion" 
+                  required 
+                />
+                <span class="remove-criteria">-</span>
+              </div>
+            </div>
+            <span id="add-criteria">+</span>
+          </div>
+
+          <div class="form-group">
+            <label>Grading Scale:</label>
+            <div class="grading-options">
+              <input 
+                type="radio" 
+                id="scale5" 
+                name="gradingScale" 
+                value="1-5" 
+                required 
+              />
+              <label for="scale5" class="scale-box">1-5 Scale</label>
+              
+              <input 
+                type="radio" 
+                id="scale10" 
+                name="gradingScale" 
+                value="1-10" 
+              />
+              <label for="scale10" class="scale-box">1-10 Scale</label>
+            </div>
+          </div>
+          
+          <button type="submit">Save Event Details</button>
+      </form>
+    </div>
+
+    <script>
+        // Add new criterion
+        document.getElementById('add-criteria').addEventListener('click', function() {
+          const criteriaList = document.getElementById('criteria-list');
+          const newCriteria = document.createElement('div');
+          newCriteria.className = 'criteria-item';
+          newCriteria.innerHTML = `
+            <input type="text" name="criteria[]" placeholder="Enter criterion" required />
+            <span class="remove-criteria">-</span>
+          `;
+          criteriaList.appendChild(newCriteria);
+        });
+      
+        // Remove criterion
+        document.addEventListener('click', function(e) {
+          if (e.target.classList.contains('remove-criteria')) {
+            const criteriaItems = document.querySelectorAll('.criteria-item');
+            if (criteriaItems.length > 1) {
+              e.target.parentElement.remove();
+            }
+          }
+        });
+      </script>
+  </body>
+</html>
