@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
-# Global variables to store event details, leaderboard, and last team result
 event_details = {}
 leaderboard = []
 last_result = {}
@@ -14,7 +13,6 @@ def calculate_score(ratings):
 def home():
     global event_details
     if request.method == "POST":
-        # Note: The input names for criteria in admin.html are "criteria[]"
         event_details = {
             "name": request.form["eventName"],
             "date": request.form["eventDate"],
@@ -32,8 +30,6 @@ def index():
     if request.method == 'POST':
         team_name = request.form["teamName"]
         ratings = []
-        # Use the criteria from the event details to extract each rating.
-        # We generate slider names as rating1, rating2, etc.
         for i, _ in enumerate(event_details["criteria"], start=1):
             rating = int(request.form.get(f"rating{i}"))
             ratings.append(rating)
