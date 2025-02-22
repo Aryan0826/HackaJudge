@@ -48,7 +48,7 @@ def index():
     # Gather ratings based on the criteria defined in admin
     ratings = []
     for i, _ in enumerate(event_details["criteria"], start=1):
-        rating = int(request.form.get(f"rating{i}"))
+        rating = float(request.form.get(f"rating{i}"))
         ratings.append(rating)
     current_score = calculate_score(ratings)
     
