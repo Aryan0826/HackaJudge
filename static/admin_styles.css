@@ -1,11 +1,16 @@
 .admin {
-  font-family: Arial, sans-serif;
-  font-size: 1.1rem;
   margin: 2rem;
   background-image: url("./images/bg.webp");
   background-size: cover;
   color: rgb(10, 3, 3);
   text-align: center;
+}
+.funnel-display {
+  font-family: "Funnel Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: "medium";
+  font-size: 50px;
 }
 
 .h1 {

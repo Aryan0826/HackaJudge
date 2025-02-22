@@ -4,6 +4,14 @@
   padding: 0;
 }
 
+.funnel-display {
+  font-family: "Funnel Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: "medium";
+  font-size: 50px;
+}
+
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-image: url("./images/bg.webp");
