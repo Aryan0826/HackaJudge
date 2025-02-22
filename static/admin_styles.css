@@ -126,7 +126,7 @@ input[type="radio"]:checked + .scale-box {
 }
 
 input[type="radio"]:checked + .scale-box:hover {
-  background: #45a049;
+  background: #15B392;
 }
 
 button[type="submit"] {
