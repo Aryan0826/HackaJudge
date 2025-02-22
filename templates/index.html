@@ -15,7 +15,11 @@
     {% endif %}
     <form method="POST">
       {% if team_name %}
-      <p><strong>Team:</strong> {{ team_name }}</p>
+      <div class="teamNameTop">
+        <p>
+          <strong>Team:</strong> {{ team_name }}
+        </p>
+      </div>
       <input type="hidden" name="teamName" value="{{ team_name }}" />
       {% else %}
       <div class="team-name-container">
