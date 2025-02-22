@@ -4,12 +4,16 @@
     <meta charset="UTF-8" />
     <title>Hackathon Judging</title>
     <link
+      href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@500..800&display=swap"
+      rel="stylesheet"
+    />
+    <link
       rel="stylesheet"
       href="{{ url_for('static', filename='styles.css') }}"
     />
   </head>
   <body>
-    <h1>Hack'A'Judge Sheet</h1>
+    <h1 class="funnel-display">Hack'A'Judge Sheet</h1>
     {% if message %}
     <p>{{ message }}</p>
     {% endif %}
@@ -47,7 +51,7 @@
           name="rating{{ loop.index }}"
           min="1"
           max="5"
-          step="0.1"   
+          step="0.1"
           value="1"
           oninput="updateValue(this)"
         />
@@ -79,9 +83,9 @@
     <script>
       function updateValue(slider) {
         // Get the index from the slider's id (e.g., "rating1" -> "1")
-        const index = slider.id.replace('rating', '');
+        const index = slider.id.replace("rating", "");
         // Get the corresponding display element
-        const valueDisplay = document.getElementById('value' + index);
+        const valueDisplay = document.getElementById("value" + index);
         // Update the display with the rounded slider value
         valueDisplay.textContent = Math.round(parseFloat(slider.value));
       }
