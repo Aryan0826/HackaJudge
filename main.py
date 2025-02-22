@@ -14,7 +14,7 @@ def calculate_score(ratings):
 def home():
     global event_details
     if request.method == "POST":
-        # Note: The input names for criteria in admin.html are "criteria[]"
+        # Note: The input name;s for criteria in admin.html are "criteria[]"
         event_details = {
             "name": request.form["eventName"],
             "date": request.form["eventDate"],
@@ -49,9 +49,9 @@ def results():
     if not last_result:
         return redirect(url_for("index"))
     return render_template('results.html',
-                           teamName=last_result["team"],
-                           score=last_result["score"],
-                           leaderboard=leaderboard)
+        teamName=last_result["team"],
+        score=last_result["score"],
+        leaderboard=leaderboard)
 
 if __name__ == '__main__':
     app.run(debug=True)
