@@ -13,6 +13,12 @@
   font-style: "medium";
   font-size: 50px;
 }
+.passero-one-regular {
+  font-family: "Passero One", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 50px;
+}
 
 .nova-square-regular {
   font-family: "Nova Square", serif;

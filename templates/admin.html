@@ -14,13 +14,17 @@
       rel="stylesheet"
     />
     <link
+      href="https://fonts.googleapis.com/css2?family=Nabla&family=Passero+One&family=Unica+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
       rel="stylesheet"
       href="{{ url_for('static', filename='admin_styles.css') }}"
     />
   </head>
   <body class="admin">
     <div class="title">
-      <h1 class="h1 funnel-display">Hack'A'Judge Admin Panel</h1>
+      <h1 class="h1 passero-one-regular">Hack'A'Judge Admin Panel</h1>
     </div>
 
     <div class="admin-container">
@@ -77,7 +81,9 @@
           </div>
           <span id="add-criteria">+</span>
         </div>
-        <button type="submit">Save Event Details</button>
+        <button class="nova-square-regular" type="submit">
+          Save Event Details
+        </button>
       </form>
     </div>
     <script>
