@@ -14,12 +14,16 @@
       rel="stylesheet"
     />
     <link
+      href="https://fonts.googleapis.com/css2?family=Nabla&family=Passero+One&family=Unica+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
       rel="stylesheet"
       href="{{ url_for('static', filename='styles.css') }}"
     />
   </head>
   <body>
-    <h1 class="funnel-display">Hack'A'Judge Sheet</h1>
+    <h1 class="passero-one-regular">Hack'A'Judge Sheet</h1>
     {% if message %}
     <p>{{ message }}</p>
     {% endif %}
@@ -31,7 +35,9 @@
       <input type="hidden" name="teamName" value="{{ team_name }}" />
       {% else %}
       <div class="team-name-container nova-square-regular">
-        <label for="teamName">Team Name :</label>
+        <div class="team-name">
+          <label for="teamName">Team Name :</label>
+        </div>
         <input
           type="text"
           id="teamName"
@@ -44,7 +50,7 @@
       <!-- Hidden field to track the current judge number -->
       <input type="hidden" name="judge" value="{{ judge }}" />
 
-      <h2 class="nova-square-regular">Criteria Scores</h2>
+      <h3 class="nova-square-regular">Judging Rubric</h3>
       {% for criterion in event.criteria %}
       <div class="slider-container nova-square-regular">
         <label for="rating{{ loop.index }}">
@@ -72,7 +78,7 @@
           placeholder="Write your feedback"
         />
       </div>
-      <button type="submit">Submit Scores</button>
+      <button class="nova-square-regular" type="submit">Submit Scores</button>
     </form>
     <img
       loading="lazy"
