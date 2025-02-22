@@ -8,6 +8,13 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../static/results.css" />
+    <style>
+      /* Additional styling to match your theme */
+      #chart-container {
+        margin: 20px auto;
+        max-width: 600px;
+      }
+    </style>
   </head>
   <body>
     <div class="card-header text-center">
@@ -18,21 +25,59 @@
       <p class="lead">Your weighted average score is:</p>
       <p class="score">{{ score | round(2) }}</p>
       <h3>Leaderboard</h3>
-      <ul class="list-group">
-        {% for entry in leaderboard %}
-        <li
-          class="list-group-item d-flex justify-content-between align-items-center"
-        >
-          {{ entry.team }}
-          <span class="badge bg-primary rounded-pill"
-            >{{ entry.score | round(2) }}</span
-          >
-        </li>
-        {% endfor %}
-      </ul>
+
+      <!-- Bar Graph Container -->
+      <div id="chart-container">
+        <canvas id="leaderboardChart"></canvas>
+      </div>
+
       <a href="{{ url_for('index') }}" class="btn btn-primary mt-3"
         >Next Team</a
       >
     </div>
+
+    <!-- Include Chart.js from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      (function () {
+        // Using JSON.parse so that your IDE sees valid JSON (and the safe filter ensures proper rendering)
+        const teamNames = JSON.parse(
+          '{{ leaderboard | map(attribute="team") | list | tojson | safe }}'
+        );
+        const teamScores = JSON.parse(
+          '{{ leaderboard | map(attribute="score") | list | tojson | safe }}'
+        );
+
+        const ctx = document
+          .getElementById("leaderboardChart")
+          .getContext("2d");
+        const leaderboardChart = new Chart(ctx, {
+          type: "bar",
+          data: {
+            labels: teamNames,
+            datasets: [
+              {
+                label: "Team Scores",
+                data: teamScores,
+                backgroundColor: "rgba(54, 162, 235, 0.5)",
+                borderColor: "rgba(54, 162, 235, 1)",
+                borderWidth: 1,
+              },
+            ],
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true,
+                ticks: { precision: 0 },
+              },
+            },
+            plugins: {
+              legend: { display: false },
+            },
+          },
+        });
+      })();
+    </script>
   </body>
 </html>
