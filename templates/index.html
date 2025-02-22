@@ -3,33 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <title>Hackathon Judging</title>
+    <link rel="stylesheet" href="./static/styles.css" />
     <link
       rel="stylesheet"
       href="{{ url_for('static', filename='styles.css') }}"
     />
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 2rem;
-      }
-      .slider-container {
-        margin-bottom: 1.5rem;
-      }
-      label {
-        display: block;
-        margin-bottom: 0.5rem;
-      }
-      input[type="range"] {
-        width: 100%;
-      }
-      .value-display {
-        font-weight: bold;
-        margin-left: 0.5rem;
-      }
-    </style>
+    
   </head>
   <body>
     <h1>Hackathon Judging Tool</h1>
+    <div class="team-name-container">
+      <label for="teamName">Team Name :</label>
+      <input type="text" id="teamName" name="teamName" placeholder="Enter team name" required />
+    </div>
+
     <form method="POST" action="/">
       <h2>Rate the Parameters</h2>
       <div class="slider-container">
@@ -106,6 +93,11 @@
           value="5"
           oninput="value5.textContent = this.value"
         />
+      </div>
+
+      <div class="remarks-container">
+        <label for="remarks">Remarks</label>
+        <input type="text" id="remarks" name="remarks" placeholder="Write your feedback." required />
       </div>
 
       <button type="submit">Submit Scores & Ratings</button>
