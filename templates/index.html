@@ -27,15 +27,15 @@
       <div class="slider-container">
         <label for="rating{{ loop.index }}">
           {{ criterion }}:
-          <span id="value{{ loop.index }}" class="value-display">5</span>
+          <span id="value{{ loop.index }}" class="value-display">1</span>
         </label>
         <input
           type="range"
           id="rating{{ loop.index }}"
           name="rating{{ loop.index }}"
           min="1"
-          max="10"
-          value="5"
+          max="5"
+          value="1"
           oninput="document.getElementById('value{{ loop.index }}').textContent = this.value"
         />
       </div>
@@ -50,7 +50,7 @@
           required
         />
       </div>
-      <button type="submit">Submit Scores &amp; Ratings</button>
+      <button type="submit">Submit Scores</button>
     </form>
     <img
       class="art"
