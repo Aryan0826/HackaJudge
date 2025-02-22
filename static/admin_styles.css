@@ -2,7 +2,7 @@
   font-family: Arial, sans-serif;
   font-size: 1.1rem;
   margin: 2rem;
-  background-image: url("./images/bg.png");
+  background-image: url("./images/bg.webp");
   background-size: cover;
   color: rgb(10, 3, 3);
   text-align: center;
@@ -116,9 +116,9 @@ input[type="radio"] {
 }
 
 input[type="radio"]:checked + .scale-box {
-  background: #15B392;
+  background: #15b392;
   color: white;
-  border-color: #15B392;
+  border-color: #15b392;
 }
 
 .scale-box:hover {
@@ -126,11 +126,11 @@ input[type="radio"]:checked + .scale-box {
 }
 
 input[type="radio"]:checked + .scale-box:hover {
-  background: #15B392;
+  background: #15b392;
 }
 
 button[type="submit"] {
-  background: #15B392;
+  background: #15b392;
   color: #ffffff;
   padding: 10px 20px;
   border: none;
@@ -141,5 +141,5 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background: #15B392;
+  background: #15b392;
 }
