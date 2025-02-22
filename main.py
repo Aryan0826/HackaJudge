@@ -45,9 +45,9 @@ def results():
     if not last_result:
         return redirect(url_for("index"))
     return render_template('results.html',
-                           teamName=last_result["team"],
-                           score=last_result["score"],
-                           leaderboard=leaderboard)
+        teamName=last_result["team"],
+        score=last_result["score"],
+        leaderboard=leaderboard)
 
 if __name__ == '__main__':
     app.run(debug=True)

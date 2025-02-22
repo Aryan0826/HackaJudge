@@ -42,9 +42,9 @@ form {
 
 .team-name-container label {
   display: block;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   margin-bottom: 0.5rem;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .team-name-container input[type="text"] {
@@ -61,7 +61,7 @@ form {
 
 .slider-container label {
   display: block;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   margin-bottom: 0.5rem;
   color: #2c3e50;
 }
@@ -81,25 +81,16 @@ form {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: #3498db;
+  background: #15B392 !important;
   cursor: pointer;
-  border: 2px solid #2980b9;
-  margin-top: -6px;
-}
-
-.slider-container input[type="range"]::-moz-range-thumb {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: #3498db;
-  cursor: pointer;
-  border: 2px solid #2980b9;
+  border: 2px solid #15B392;
+  margin-top: 0px;
 }
 
 .value-display {
   font-weight: bold;
   margin-left: 10px;
-  color: #3498db;
+  color: #000000;
 }
 
 .remarks-container {
@@ -108,7 +99,7 @@ form {
 
 .remarks-container label {
   display: block;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   margin-bottom: 0.5rem;
   color: #2c3e50;
 }
@@ -122,7 +113,7 @@ form {
 }
 
 button {
-  background: #3498db;
+  background: #15B392;
   color: #ffffff;
   padding: 10px 20px;
   border: none;
@@ -133,7 +124,7 @@ button {
 }
 
 button:hover {
-  background: #2980b9;
+  background: #15B392;
 }
 
 ul {
@@ -150,7 +141,7 @@ ul li {
 }
 
 a {
-  color: #3498db;
+  color: #15B392;
   text-decoration: none;
   font-size: 1.1rem;
 }
