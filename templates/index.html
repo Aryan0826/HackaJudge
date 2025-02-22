@@ -10,7 +10,14 @@
   </head>
   <body>
     <h1>Hackathon Judging Tool</h1>
+    {% if message %}
+    <p>{{ message }}</p>
+    {% endif %}
     <form method="POST">
+      {% if team_name %}
+      <p><strong>Team:</strong> {{ team_name }}</p>
+      <input type="hidden" name="teamName" value="{{ team_name }}" />
+      {% else %}
       <div class="team-name-container">
         <label for="teamName">Team Name :</label>
         <input
@@ -21,6 +28,10 @@
           required
         />
       </div>
+      {% endif %}
+      <!-- Hidden field to track the current judge number -->
+      <input type="hidden" name="judge" value="{{ judge }}" />
+
       <h2>Rate the Parameters</h2>
       {% for criterion in event.criteria %}
       <div class="slider-container">
@@ -51,7 +62,11 @@
       </div>
       <button type="submit">Submit Scores</button>
     </form>
-    <img class = "art" src="../static/images/illustration1.png"/>
-    <img class = "aum" src="../static/images/illustration4.png"/>
+    <img class="art" src="../static/images/illustration1.png" alt="Art" />
+    <img
+      class="aum"
+      src="../static/images/illustration4.png"
+      alt="Illustration"
+    />
   </body>
 </html>

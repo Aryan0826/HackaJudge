@@ -3,39 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <title>Project Performance</title>
-    
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      href="{{ url_for('static', filename='results.css') }}"
-      
     />
-    <link rel="stylesheet" href="../static/results.css">
+    <link rel="stylesheet" href="../static/results.css" />
   </head>
   <body>
-      <div class="card-header text-center">
-        <h2>Project Performance</h2>
-      </div>
-      <div class="card-body text-center">
-        <p>{{ teamName }}</p>
-        <p class="lead">Your weighted average score is:</p>
-        <p class="score">{{ score | round(2) }}</p>
-        <h3>Leaderboard</h3>
-        <ul class="list-group">
-          {% for entry in leaderboard %}
-          <li
-            class="list-group-item d-flex justify-content-between align-items-center"
-          >
-            {{ entry.team }}
-            <span class="badge bg-primary rounded-pill"
-              >{{ entry.score | round(2) }}</span
-            >
-          </li>
-          {% endfor %}
-        </ul>
-        <a href="{{ url_for('index') }}" class="btn btn-primary mt-3"
-          >Next Team</a
+    <div class="card-header text-center">
+      <h2>Project Performance</h2>
+    </div>
+    <div class="card-body text-center">
+      <p>{{ teamName }}</p>
+      <p class="lead">Your weighted average score is:</p>
+      <p class="score">{{ score | round(2) }}</p>
+      <h3>Leaderboard</h3>
+      <ul class="list-group">
+        {% for entry in leaderboard %}
+        <li
+          class="list-group-item d-flex justify-content-between align-items-center"
         >
-      </div>
+          {{ entry.team }}
+          <span class="badge bg-primary rounded-pill"
+            >{{ entry.score | round(2) }}</span
+          >
+        </li>
+        {% endfor %}
+      </ul>
+      <a href="{{ url_for('index') }}" class="btn btn-primary mt-3"
+        >Next Team</a
+      >
+    </div>
   </body>
 </html>
