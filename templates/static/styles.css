@@ -1,0 +1,43 @@
+
+      body {
+        font-family: Arial, sans-serif;
+        margin: 2rem;
+        background-color: rgb(6, 24, 31);
+        color: white;
+        text-align: center;
+      }
+      .slider-container {
+        margin-bottom: 1.5rem;
+      }
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+      input[type="range"] {
+        width: 100%;
+      }
+      .value-display {
+        font-weight: bold;
+        margin-left: 0.5rem;
+      }
+      .team-name-container {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .team-name-container input {
+        padding: 0rem;
+        font-size: 1rem;
+        width: 250px;
+      }
+      .remarks-container {
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .remarks-container input {
+        padding: 3rem;
+        font-size: 1rem;
+        text-align: center;
+        width: 250px;
+      }
+      
