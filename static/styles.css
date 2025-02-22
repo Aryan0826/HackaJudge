@@ -7,11 +7,16 @@
 body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   background-image: url("./images/bg.png");
-  color: #333;
+  background-size: cover;
+  color: rgb(255, 255, 255);
   line-height: 1.6;
   max-width: 800px;
   margin: 40px auto;
   padding: 20px;
+}
+
+.teamNameTop {
+  color: #000000;
 }
 
 h1 {
@@ -36,7 +41,6 @@ form {
 }
 
 .team-name-container {
-  
   margin-bottom: 1.5rem;
 }
 
