@@ -3,104 +3,54 @@
   <head>
     <meta charset="UTF-8" />
     <title>Hackathon Judging</title>
-    <link rel="stylesheet" href="../static/styles.css" />
     <link
       rel="stylesheet"
       href="{{ url_for('static', filename='styles.css') }}"
     />
-    
   </head>
   <body>
     <h1>Hackathon Judging Tool</h1>
-    <div class="team-name-container">
-      <label for="teamName">Team Name :</label>
-      <input type="text" id="teamName" name="teamName" placeholder="Enter team name" required />
-    </div>
-
-    <form method="POST" action="/">
+    <form method="POST">
+      <div class="team-name-container">
+        <label for="teamName">Team Name :</label>
+        <input
+          type="text"
+          id="teamName"
+          name="teamName"
+          placeholder="Enter team name"
+          required
+        />
+      </div>
       <h2>Rate the Parameters</h2>
+      <!-- Dynamically generate sliders based on criteria -->
+      {% for criterion in event.criteria %}
       <div class="slider-container">
-        <label for="rating1"
-          >Innovation and Creativity:
-          <span id="value1" class="value-display">5</span></label
-        >
+        <label for="rating{{ loop.index }}">
+          {{ criterion }}:
+          <span id="value{{ loop.index }}" class="value-display">5</span>
+        </label>
         <input
           type="range"
-          id="rating1"
-          name="rating1"
+          id="rating{{ loop.index }}"
+          name="rating{{ loop.index }}"
           min="1"
           max="10"
           value="5"
-          oninput="value1.textContent = this.value"
+          oninput="document.getElementById('value{{ loop.index }}').textContent = this.value"
         />
       </div>
-      <div class="slider-container">
-        <label for="rating2"
-          >Technical Execution:
-          <span id="value2" class="value-display">5</span></label
-        >
-        <input
-          type="range"
-          id="rating2"
-          name="rating2"
-          min="1"
-          max="10"
-          value="5"
-          oninput="value2.textContent = this.value"
-        />
-      </div>
-      <div class="slider-container">
-        <label for="rating3"
-          >Impact and Usefulness:
-          <span id="value3" class="value-display">5</span></label
-        >
-        <input
-          type="range"
-          id="rating3"
-          name="rating3"
-          min="1"
-          max="10"
-          value="5"
-          oninput="value3.textContent = this.value"
-        />
-      </div>
-      <div class="slider-container">
-        <label for="rating4"
-          >User Experience and Design:
-          <span id="value4" class="value-display">5</span></label
-        >
-        <input
-          type="range"
-          id="rating4"
-          name="rating4"
-          min="1"
-          max="10"
-          value="5"
-          oninput="value4.textContent = this.value"
-        />
-      </div>
-      <div class="slider-container">
-        <label for="rating5"
-          >Presentation and Pitch:
-          <span id="value5" class="value-display">5</span></label
-        >
-        <input
-          type="range"
-          id="rating5"
-          name="rating5"
-          min="1"
-          max="10"
-          value="5"
-          oninput="value5.textContent = this.value"
-        />
-      </div>
-
+      {% endfor %}
       <div class="remarks-container">
         <label for="remarks">Remarks</label>
-        <input type="text" id="remarks" name="remarks" placeholder="Write your feedback." required />
+        <input
+          type="text"
+          id="remarks"
+          name="remarks"
+          placeholder="Write your feedback."
+          required
+        />
       </div>
-
-      <button type="submit">Submit Scores & Ratings</button>
+      <button type="submit">Submit Scores &amp; Ratings</button>
     </form>
     <img class = "art" src="../static/images/illustration1.png"/>
     <img class = "trophy" src="../static/images/illustration2.png"/>

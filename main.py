@@ -2,42 +2,56 @@ from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
-WEIGHTS = {
-    'rating1': 0.2,   # Innovation and Creativity
-    'rating2': 0.25,  # Technical Execution
-    'rating3': 0.2,   # Impact and Usefulness
-    'rating4': 0.15,  # User Experience and Design
-    'rating5': 0.2    # Presentation and Pitch
-}
+# Global variables to store event details, leaderboard, and last team result
+event_details = {}
+leaderboard = []
+last_result = {}
 
+def calculate_score(ratings):
+    return sum(ratings) / len(ratings)
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route("/", methods=["GET", "POST"])
+def home():
+    global event_details
+    if request.method == "POST":
+        # Note: The input names for criteria in admin.html are "criteria[]"
+        event_details = {
+            "name": request.form["eventName"],
+            "date": request.form["eventDate"],
+            "teams": int(request.form["numTeams"]),
+            "criteria": request.form.getlist("criteria[]")
+        }
+        return redirect(url_for("index"))
+    return render_template("admin.html")
+
+@app.route('/judging', methods=['GET', 'POST'])
 def index():
+    global last_result
+    if not event_details:
+        return redirect(url_for("home"))
     if request.method == 'POST':
-        rating1 = float(request.form.get('rating1', 5))
-        rating2 = float(request.form.get('rating2', 5))
-        rating3 = float(request.form.get('rating3', 5))
-        rating4 = float(request.form.get('rating4', 5))
-        rating5 = float(request.form.get('rating5', 5))
-
-        weighted_average = (
-            rating1 * WEIGHTS['rating1'] +
-            rating2 * WEIGHTS['rating2'] +
-            rating3 * WEIGHTS['rating3'] +
-            rating4 * WEIGHTS['rating4'] +
-            rating5 * WEIGHTS['rating5']
-        )       
-        return redirect(url_for('results', score = weighted_average))
-    return render_template('index.html')
+        team_name = request.form["teamName"]
+        ratings = []
+        # Use the criteria from the event details to extract each rating.
+        # We generate slider names as rating1, rating2, etc.
+        for i, _ in enumerate(event_details["criteria"], start=1):
+            rating = int(request.form.get(f"rating{i}"))
+            ratings.append(rating)
+        score = calculate_score(ratings)
+        leaderboard.append({"team": team_name, "score": score})
+        leaderboard.sort(key=lambda x: x["score"], reverse=True)
+        last_result = {"team": team_name, "score": score}
+        return redirect(url_for('results'))
+    return render_template('index.html', event=event_details)
 
 @app.route('/results')
 def results():
-    score = request.args.get('score', None)
-    try:
-        score = float(score)
-    except (ValueError, TypeError):
-        score = 0
-    return render_template('results.html', score = score)
+    if not last_result:
+        return redirect(url_for("index"))
+    return render_template('results.html',
+                           teamName=last_result["team"],
+                           score=last_result["score"],
+                           leaderboard=leaderboard)
 
 if __name__ == '__main__':
     app.run(debug=True)
