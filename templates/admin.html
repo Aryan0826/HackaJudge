@@ -7,17 +7,26 @@
       href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@500..800&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nova+Square&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="{{ url_for('static', filename='admin_styles.css') }}"
     />
   </head>
   <body class="admin">
-    <h1 class="h1 funnel-display">Hack'A'Judge Admin Panel</h1>
+    <div class="title">
+      <h1 class="h1 funnel-display">Hack'A'Judge Admin Panel</h1>
+    </div>
+
     <div class="admin-container">
       <form method="POST">
-        <h2>Event Setup</h2>
-        <div class="form-group">
+        <h2 class="nova-square-regular">Event Setup</h2>
+        <div class="form-group nova-square-regular">
           <label for="eventName">Event Name:</label>
           <input
             type="text"
@@ -27,11 +36,11 @@
             required
           />
         </div>
-        <div class="form-group">
+        <div class="form-group nova-square-regular">
           <label for="eventDate">Event Date:</label>
           <input type="date" id="eventDate" name="eventDate" required />
         </div>
-        <div class="form-group">
+        <div class="form-group nova-square-regular">
           <label for="numTeams">Number of Teams:</label>
           <input
             type="number"
@@ -42,7 +51,7 @@
             required
           />
         </div>
-        <div class="form-group">
+        <div class="form-group nova-square-regular">
           <label for="numJudges">Number of Judges (max 4):</label>
           <input
             type="number"
@@ -53,7 +62,7 @@
             required
           />
         </div>
-        <div class="form-group">
+        <div class="form-group nova-square-regular">
           <label>Judging Criteria:</label>
           <div id="criteria-list">
             <div class="criteria-item">
