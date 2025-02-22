@@ -205,90 +205,63 @@ form {
   }
 }
 
-
-  @media (max-width: 1024px) { 
-    .art {
-      position: relative; 
-      display: block;
-      margin: 20px auto;
-      width: 250px;
-      top: 50px;
-      left: 50px;
-    }
+@media (max-width: 1024px) { 
+  .art {
+    position: relative; 
+    display: block;
+    margin: 20px auto;
+    width: 250px;
+    top: 50px;
+    left: 50px;
   }
+}
 
-  @media (max-width: 768px) { 
-    .art {
-      position: relative; 
-      display: block;
-      margin: 20px auto;
-      width: 200px;
-      top: 40px;
-      left: 40px;
-    }
+@media (max-width: 768px) { 
+  .art {
+    position: relative; 
+    display: block;
+    margin: 20px auto;
+    width: 200px;
+    top: 40px;
+    left: 40px;
   }
+}
 
-  @media (max-width: 480px) { 
-    .art {
-      position: relative; 
-      display: block;
-      margin: 20px auto; 
-      width: 150px;
-      top: 0;
-      left: 0;
-    }
+@media (max-width: 480px) { 
+  .art {
+    position: relative; 
+    display: block;
+    margin: 20px auto; 
+    width: 120px;
+    top: 0;
+    left: 0;
   }
+}
 
+/* Trophy positioning remains the same for largest sizes */
+.trophy {
+  position: absolute;
+  top: 70px;
+  right: 70px;
+  width: 300px; 
+  height: auto;  
+}
+
+@media (max-width: 1600px) { 
   .trophy {
-    position: absolute;
-    top: 70px;
-    left: 70px;
-    width: 300px; 
-    height: auto; 
+    position: relative; 
+    display: block;
+    margin: 20px auto;
+    width: 250px;
+    top: 50px;
+    right: 50px;
   }
-  
-  @media (max-width: 1600px) { 
-    .trophy {
-      position: relative; 
-      display: block;
-      margin: 20px auto;
-      width: 250px;
-      top: 50px;
-      left: 50px;
-    }
-  }
-  
-  
-    @media (max-width: 1024px) { 
-      .trophy {
-        position: relative; 
-        display: block;
-        margin: 20px auto;
-        width: 250px;
-        top: 50px;
-        left: 50px;
-      }
-    }
-  
-    @media (max-width: 768px) { 
-      .trophy {
-        position: relative; 
-        display: block;
-        margin: 20px auto;
-        width: 200px;
-        top: 40px;
-        left: 40px;
-      }
-    }
-  
-    @media (max-width: 480px) { 
-      .trophy {
-        display: block;
-        margin: 0 auto 20px auto; 
-        width: 120px;
-        position: absolute;
-        top: 0px; 
-        left: 50%;
-        transform: translateX(-50%); 
-      }
-    }
+}
+
+.aum {
+  position: absolute;
+  bottom: 70px;
+  right: 70px;
+  width: 200px; 
+  height: auto;  
+}
