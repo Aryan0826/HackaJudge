@@ -1,7 +1,5 @@
 ## **Hack'A'Judge**: Streamlined Hackathon Judging Software
 
-## Revolutionizing Hackathon Judging with _Real-Time_ Precision
-
 **Hack'A'Judge** is a web-based platform designed to transform hackathon judging by replacing the slow, error-prone paper-based processes with a fast, digital solution. 
 
 Built in just ***24 hours*** during the .devHacks Hackathon, **Hack'A'Judge** enables judges to score teams and provide feedback, with results visualized in _real-time_ on a dynamic bar graph. 
